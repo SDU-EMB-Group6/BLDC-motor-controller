@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
---Date        : Mon Oct 16 12:37:59 2017
+--Date        : Mon Oct 16 12:43:55 2017
 --Host        : javi-SAT-L850-Ubuntu running 64-bit Ubuntu 16.04.3 LTS
 --Command     : generate_target BLDC_design_wrapper.bd
 --Design      : BLDC_design_wrapper
@@ -33,7 +33,11 @@ entity BLDC_design_wrapper is
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 31 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    delay_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    filtered_signal_out : out STD_LOGIC;
+    raw_signal_in : in STD_LOGIC;
+    reset_in : in STD_LOGIC
   );
 end BLDC_design_wrapper;
 
@@ -60,7 +64,11 @@ architecture STRUCTURE of BLDC_design_wrapper is
     FIXED_IO_ddr_vrp : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
-    FIXED_IO_ps_porb : inout STD_LOGIC
+    FIXED_IO_ps_porb : inout STD_LOGIC;
+    delay_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    filtered_signal_out : out STD_LOGIC;
+    raw_signal_in : in STD_LOGIC;
+    reset_in : in STD_LOGIC
   );
   end component BLDC_design;
 begin
@@ -86,6 +94,10 @@ BLDC_design_i: component BLDC_design
       FIXED_IO_mio(31 downto 0) => FIXED_IO_mio(31 downto 0),
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb
+      FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      delay_in(23 downto 0) => delay_in(23 downto 0),
+      filtered_signal_out => filtered_signal_out,
+      raw_signal_in => raw_signal_in,
+      reset_in => reset_in
     );
 end STRUCTURE;
