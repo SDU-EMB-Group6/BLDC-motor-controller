@@ -1,8 +1,8 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
-| Date         : Mon Oct 16 12:46:56 2017
-| Host         : javi-SAT-L850-Ubuntu running 64-bit Ubuntu 16.04.3 LTS
+| Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+| Date         : Sun Oct 22 19:02:36 2017
+| Host         : DESKTOP-NHGQ0HT running 64-bit major release  (build 9200)
 | Command      : report_utilization -file BLDC_design_wrapper_utilization_synth.rpt -pb BLDC_design_wrapper_utilization_synth.pb
 | Design       : BLDC_design_wrapper
 | Device       : 7z010clg225-1
@@ -106,24 +106,24 @@ Table of Contents
 5. IO and GT Specific
 ---------------------
 
-+-----------------------------+------+-------+-----------+-------+
-|          Site Type          | Used | Fixed | Available | Util% |
-+-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   27 |     0 |        54 | 50.00 |
-| Bonded IPADs                |    0 |     0 |         2 |  0.00 |
-| Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
-| PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
-| PHASER_REF                  |    0 |     0 |         2 |  0.00 |
-| OUT_FIFO                    |    0 |     0 |         8 |  0.00 |
-| IN_FIFO                     |    0 |     0 |         8 |  0.00 |
-| IDELAYCTRL                  |    0 |     0 |         2 |  0.00 |
-| IBUFDS                      |    0 |     0 |        54 |  0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |  0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |  0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |  0.00 |
-| ILOGIC                      |    0 |     0 |        54 |  0.00 |
-| OLOGIC                      |    0 |     0 |        54 |  0.00 |
-+-----------------------------+------+-------+-----------+-------+
++-----------------------------+------+-------+-----------+--------+
+|          Site Type          | Used | Fixed | Available |  Util% |
++-----------------------------+------+-------+-----------+--------+
+| Bonded IOB                  |   61 |     0 |        54 | 112.96 |
+| Bonded IPADs                |    0 |     0 |         2 |   0.00 |
+| Bonded IOPADs               |    0 |     0 |       130 |   0.00 |
+| PHY_CONTROL                 |    0 |     0 |         2 |   0.00 |
+| PHASER_REF                  |    0 |     0 |         2 |   0.00 |
+| OUT_FIFO                    |    0 |     0 |         8 |   0.00 |
+| IN_FIFO                     |    0 |     0 |         8 |   0.00 |
+| IDELAYCTRL                  |    0 |     0 |         2 |   0.00 |
+| IBUFDS                      |    0 |     0 |        54 |   0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |   0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |   0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |   0.00 |
+| ILOGIC                      |    0 |     0 |        54 |   0.00 |
+| OLOGIC                      |    0 |     0 |        54 |   0.00 |
++-----------------------------+------+-------+-----------+--------+
 
 
 6. Clocking
@@ -165,8 +165,8 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| IBUF     |   26 |                  IO |
-| OBUF     |    1 |                  IO |
+| IBUF     |   52 |                  IO |
+| OBUF     |    9 |                  IO |
 +----------+------+---------------------+
 
 
@@ -177,7 +177,9 @@ Table of Contents
 |              Ref Name              | Used |
 +------------------------------------+------+
 | BLDC_design_processing_system7_0_0 |    1 |
+| BLDC_design_debounce_0_1           |    1 |
 | BLDC_design_debounce_0_0           |    1 |
+| BLDC_design_btn_counter_0_0        |    1 |
 +------------------------------------+------+
 
 

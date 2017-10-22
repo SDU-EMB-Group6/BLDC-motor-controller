@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
--- Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
--- Date        : Mon Oct 16 12:45:24 2017
--- Host        : javi-SAT-L850-Ubuntu running 64-bit Ubuntu 16.04.3 LTS
+-- Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+-- Date        : Sun Oct 22 15:51:41 2017
+-- Host        : DESKTOP-NHGQ0HT running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
---               /home/jalop17/01-scripts/02-HDL/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_debounce_0_0/BLDC_design_debounce_0_0_sim_netlist.vhdl
+--               c:/GIT/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_debounce_0_0/BLDC_design_debounce_0_0_sim_netlist.vhdl
 -- Design      : BLDC_design_debounce_0_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.

@@ -46,7 +46,7 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: user.org:module_ref:debounce:1.0
+-- IP VLNV: xilinx.com:module_ref:debounce:1.0
 -- IP Revision: 1
 
 LIBRARY ieee;
@@ -79,6 +79,8 @@ ARCHITECTURE BLDC_design_debounce_0_0_arch OF BLDC_design_debounce_0_0 IS
   ATTRIBUTE X_CORE_INFO OF BLDC_design_debounce_0_0_arch: ARCHITECTURE IS "debounce,Vivado 2017.2";
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF BLDC_design_debounce_0_0_arch : ARCHITECTURE IS "BLDC_design_debounce_0_0,debounce,{}";
+  ATTRIBUTE CORE_GENERATION_INFO : STRING;
+  ATTRIBUTE CORE_GENERATION_INFO OF BLDC_design_debounce_0_0_arch: ARCHITECTURE IS "BLDC_design_debounce_0_0,debounce,{x_ipProduct=Vivado 2017.2,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=debounce,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_INFO OF reset_in: SIGNAL IS "xilinx.com:signal:reset:1.0 reset_in RST";
 BEGIN

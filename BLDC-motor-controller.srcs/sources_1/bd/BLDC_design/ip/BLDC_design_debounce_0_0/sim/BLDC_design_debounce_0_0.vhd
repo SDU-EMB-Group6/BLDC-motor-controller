@@ -46,7 +46,7 @@
 -- 
 -- DO NOT MODIFY THIS FILE.
 
--- IP VLNV: user.org:module_ref:debounce:1.0
+-- IP VLNV: xilinx.com:module_ref:debounce:1.0
 -- IP Revision: 1
 
 LIBRARY ieee;

@@ -1,23 +1,35 @@
 {
    guistr: "# # String gsaved with Nlview 6.6.8  2016-12-21 bk=1.3817 VDI=40 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
-preplace port filtered_signal_out -pg 1 -y 230 -defaultsOSRD
-preplace port DDR -pg 1 -y -90 -defaultsOSRD
-preplace port raw_signal_in -pg 1 -y 220 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y -70 -defaultsOSRD
-preplace port reset_in -pg 1 -y 260 -defaultsOSRD
-preplace portBus delay_in -pg 1 -y 240 -defaultsOSRD
-preplace inst debounce_0 -pg 1 -lvl 1 -y 230 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -y 0 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 1 1 NJ
-preplace netloc delay_in_1 1 0 1 NJ
-preplace netloc raw_signal_in_1 1 0 1 NJ
-preplace netloc debounce_0_filtered_signal_out 1 1 1 N
-preplace netloc processing_system7_0_FIXED_IO 1 1 1 NJ
-preplace netloc reset_in_1 1 0 1 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 0 140 430
-preplace netloc processing_system7_0_FCLK_CLK1 1 0 2 0 150 420
-levelinfo -pg 1 -20 210 450 -top -140 -bot 310
+preplace port DDR -pg 1 -lvl 2:-130 -defaultsOSRD -top
+preplace port raw_signal_in -pg 1 -y 310 -defaultsOSRD
+preplace port raw_signal_in_1 -pg 1 -y 460 -defaultsOSRD
+preplace port reset_in_1 -pg 1 -y 500 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 2:-150 -defaultsOSRD -top
+preplace port reset_out -pg 1 -y 370 -defaultsOSRD
+preplace port reset_in -pg 1 -y 350 -defaultsOSRD
+preplace portBus delay_in_1 -pg 1 -y 480 -defaultsOSRD
+preplace portBus delay_in -pg 1 -y 330 -defaultsOSRD
+preplace portBus counter_out -pg 1 -y 390 -defaultsOSRD
+preplace inst btn_counter_0 -pg 1 -lvl 3 -y 380 -defaultsOSRD
+preplace inst debounce_0 -pg 1 -lvl 2 -y 320 -defaultsOSRD
+preplace inst debounce_1 -pg 1 -lvl 2 -y 470 -defaultsOSRD -resize 286 124
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 150 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 1 1 450J
+preplace netloc btn_counter_0_reset_out 1 3 1 N
+preplace netloc delay_in_1 1 0 2 NJ 330 NJ
+preplace netloc reset_in_1_1 1 0 2 NJ 500 NJ
+preplace netloc raw_signal_in_1 1 0 2 NJ 310 NJ
+preplace netloc debounce_0_filtered_signal_out 1 2 1 800
+preplace netloc btn_counter_0_counter_out 1 3 1 N
+preplace netloc debounce_1_filtered_signal_out 1 2 1 820
+preplace netloc processing_system7_0_FIXED_IO 1 1 1 440J
+preplace netloc delay_in_1_1 1 0 2 NJ 480 NJ
+preplace netloc reset_in_1 1 0 2 NJ 350 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 10 10 430
+preplace netloc processing_system7_0_FCLK_CLK1 1 1 2 440 550 810J
+preplace netloc raw_signal_in_1_1 1 0 2 NJ 460 NJ
+levelinfo -pg 1 -10 220 630 980 1160 -top -160 -bot 700
 ",
 }
 {

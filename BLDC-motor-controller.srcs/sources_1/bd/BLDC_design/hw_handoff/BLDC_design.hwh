@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Oct 16 12:44:08 2017" VIVADOVERSION="2017.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Oct 22 19:00:58 2017" VIVADOVERSION="2017.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="trenz.biz:te0726_m:part0:3.1" DEVICE="7z010" NAME="BLDC_design" PACKAGE="clg225" SPEEDGRADE="-1"/>
 
@@ -25,24 +25,44 @@
     <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef"/>
-    <PORT DIR="I" LEFT="23" NAME="delay_in" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_delay_in">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="debounce_0" PORT="delay_in"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT DIR="O" NAME="filtered_signal_out" SIGIS="undef" SIGNAME="debounce_0_filtered_signal_out">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="debounce_0" PORT="filtered_signal_out"/>
-      </CONNECTIONS>
-    </PORT>
     <PORT DIR="I" NAME="raw_signal_in" SIGIS="undef" SIGNAME="External_Ports_raw_signal_in">
       <CONNECTIONS>
         <CONNECTION INSTANCE="debounce_0" PORT="raw_signal_in"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="I" LEFT="23" NAME="delay_in" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_delay_in">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="debounce_0" PORT="delay_in"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="I" NAME="reset_in" SIGIS="rst" SIGNAME="External_Ports_reset_in">
       <CONNECTIONS>
         <CONNECTION INSTANCE="debounce_0" PORT="reset_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="raw_signal_in_1" SIGIS="undef" SIGNAME="External_Ports_raw_signal_in_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="debounce_1" PORT="raw_signal_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="23" NAME="delay_in_1" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_delay_in_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="debounce_1" PORT="delay_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="reset_in_1" SIGIS="rst" SIGNAME="External_Ports_reset_in_1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="debounce_1" PORT="reset_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="reset_out" SIGIS="rst" SIGNAME="btn_counter_0_reset_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="btn_counter_0" PORT="reset_out"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="counter_out" RIGHT="0" SIGIS="undef" SIGNAME="btn_counter_0_counter_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="btn_counter_0" PORT="counter_out"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -95,7 +115,43 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE FULLNAME="/debounce_0" HWVERSION="1.0" INSTANCE="debounce_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="debounce" VLNV="user.org:module_ref:debounce:1.0">
+    <MODULE FULLNAME="/btn_counter_0" HWVERSION="1.0" INSTANCE="btn_counter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="btn_counter" VLNV="xilinx.com:module_ref:btn_counter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="timeout" VALUE="200"/>
+        <PARAMETER NAME="Component_Name" VALUE="BLDC_design_btn_counter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_200M_in" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_CLK1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="button1_in" SIGIS="undef" SIGNAME="debounce_0_filtered_signal_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="debounce_0" PORT="filtered_signal_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="button2_in" SIGIS="undef" SIGNAME="debounce_1_filtered_signal_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="debounce_1" PORT="filtered_signal_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="reset_out" SIGIS="rst" SIGNAME="btn_counter_0_reset_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="counter_out" RIGHT="0" SIGIS="undef" SIGNAME="btn_counter_0_counter_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="counter_out"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/debounce_0" HWVERSION="1.0" INSTANCE="debounce_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="debounce" VLNV="xilinx.com:module_ref:debounce:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="Component_Name" VALUE="BLDC_design_debounce_0_0"/>
@@ -124,7 +180,42 @@
         </PORT>
         <PORT DIR="O" NAME="filtered_signal_out" SIGIS="undef" SIGNAME="debounce_0_filtered_signal_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="filtered_signal_out"/>
+            <CONNECTION INSTANCE="btn_counter_0" PORT="button1_in"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/debounce_1" HWVERSION="1.0" INSTANCE="debounce_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="debounce" VLNV="xilinx.com:module_ref:debounce:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="BLDC_design_debounce_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_200M_in" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_CLK1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="raw_signal_in" SIGIS="undef" SIGNAME="External_Ports_raw_signal_in_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="raw_signal_in_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="23" NAME="delay_in" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_delay_in_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="delay_in_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset_in" SIGIS="rst" SIGNAME="External_Ports_reset_in_1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset_in_1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="filtered_signal_out" SIGIS="undef" SIGNAME="debounce_1_filtered_signal_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="btn_counter_0" PORT="button2_in"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1126,6 +1217,8 @@
         <PORT CLKFREQUENCY="200000000" DIR="O" NAME="FCLK_CLK1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="debounce_0" PORT="clk_200M_in"/>
+            <CONNECTION INSTANCE="debounce_1" PORT="clk_200M_in"/>
+            <CONNECTION INSTANCE="btn_counter_0" PORT="clk_200M_in"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst"/>

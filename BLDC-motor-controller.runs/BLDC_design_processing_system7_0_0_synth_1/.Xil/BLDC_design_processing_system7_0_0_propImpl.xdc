@@ -1,8 +1,8 @@
-set_property SRC_FILE_INFO {cfile:/home/jalop17/01-scripts/02-HDL/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_processing_system7_0_0/BLDC_design_processing_system7_0_0.xdc rfile:../../../BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_processing_system7_0_0/BLDC_design_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:inst} [current_design]
+set_property SRC_FILE_INFO {cfile:c:/GIT/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_processing_system7_0_0/BLDC_design_processing_system7_0_0.xdc rfile:../../../BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_processing_system7_0_0/BLDC_design_processing_system7_0_0.xdc id:1 order:EARLY scoped_inst:inst} [current_design]
 set_property src_info {type:SCOPED_XDC file:1 line:21 export:INPUT save:INPUT read:READ} [current_design]
-set_input_jitter clk_fpga_1 0.15
-set_property src_info {type:SCOPED_XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter clk_fpga_0 0.6
+set_property src_info {type:SCOPED_XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]
+set_input_jitter clk_fpga_1 0.15
 set_property src_info {type:SCOPED_XDC file:1 line:34 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN "C13" [get_ports "MIO[31]"]
 set_property src_info {type:SCOPED_XDC file:1 line:41 export:INPUT save:INPUT read:READ} [current_design]

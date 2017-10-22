@@ -1,8 +1,8 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
---Tool Version: Vivado v.2017.2 (lin64) Build 1909853 Thu Jun 15 18:39:10 MDT 2017
---Date        : Mon Oct 16 12:43:54 2017
---Host        : javi-SAT-L850-Ubuntu running 64-bit Ubuntu 16.04.3 LTS
+--Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
+--Date        : Sun Oct 22 19:00:57 2017
+--Host        : DESKTOP-NHGQ0HT running 64-bit major release  (build 9200)
 --Command     : generate_target BLDC_design.bd
 --Design      : BLDC_design
 --Purpose     : IP block netlist
@@ -34,15 +34,19 @@ entity BLDC_design is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    counter_out : out STD_LOGIC_VECTOR ( 7 downto 0 );
     delay_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
-    filtered_signal_out : out STD_LOGIC;
+    delay_in_1 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     raw_signal_in : in STD_LOGIC;
-    reset_in : in STD_LOGIC
+    raw_signal_in_1 : in STD_LOGIC;
+    reset_in : in STD_LOGIC;
+    reset_in_1 : in STD_LOGIC;
+    reset_out : out STD_LOGIC
   );
-  attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of BLDC_design : entity is "BLDC_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=BLDC_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=2,numReposBlks=2,numNonXlnxBlks=1,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
-  attribute HW_HANDOFF : string;
-  attribute HW_HANDOFF of BLDC_design : entity is "BLDC_design.hwdef";
+  attribute core_generation_info : string;
+  attribute core_generation_info of BLDC_design : entity is "BLDC_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=BLDC_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute hw_handoff : string;
+  attribute hw_handoff of BLDC_design : entity is "BLDC_design.hwdef";
 end BLDC_design;
 
 architecture STRUCTURE of BLDC_design is
@@ -129,8 +133,30 @@ architecture STRUCTURE of BLDC_design is
     filtered_signal_out : out STD_LOGIC
   );
   end component BLDC_design_debounce_0_0;
+  component BLDC_design_debounce_0_1 is
+  port (
+    clk_200M_in : in STD_LOGIC;
+    raw_signal_in : in STD_LOGIC;
+    delay_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
+    reset_in : in STD_LOGIC;
+    filtered_signal_out : out STD_LOGIC
+  );
+  end component BLDC_design_debounce_0_1;
+  component BLDC_design_btn_counter_0_0 is
+  port (
+    clk_200M_in : in STD_LOGIC;
+    button1_in : in STD_LOGIC;
+    button2_in : in STD_LOGIC;
+    reset_out : out STD_LOGIC;
+    counter_out : out STD_LOGIC_VECTOR ( 7 downto 0 )
+  );
+  end component BLDC_design_btn_counter_0_0;
+  signal btn_counter_0_counter_out : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal btn_counter_0_reset_out : STD_LOGIC;
   signal debounce_0_filtered_signal_out : STD_LOGIC;
-  signal delay_in_1 : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal debounce_1_filtered_signal_out : STD_LOGIC;
+  signal \^delay_in_1\ : STD_LOGIC_VECTOR ( 23 downto 0 );
+  signal delay_in_1_1 : STD_LOGIC_VECTOR ( 23 downto 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
   signal processing_system7_0_DDR_BA : STD_LOGIC_VECTOR ( 2 downto 0 );
   signal processing_system7_0_DDR_CAS_N : STD_LOGIC;
@@ -154,8 +180,10 @@ architecture STRUCTURE of BLDC_design is
   signal processing_system7_0_FIXED_IO_PS_CLK : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_PORB : STD_LOGIC;
   signal processing_system7_0_FIXED_IO_PS_SRSTB : STD_LOGIC;
-  signal raw_signal_in_1 : STD_LOGIC;
-  signal reset_in_1 : STD_LOGIC;
+  signal \^raw_signal_in_1\ : STD_LOGIC;
+  signal raw_signal_in_1_1 : STD_LOGIC;
+  signal \^reset_in_1\ : STD_LOGIC;
+  signal reset_in_1_1 : STD_LOGIC;
   signal NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_ARVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_AWVALID_UNCONNECTED : STD_LOGIC;
@@ -190,17 +218,37 @@ architecture STRUCTURE of BLDC_design is
   signal NLW_processing_system7_0_M_AXI_GP0_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
 begin
-  delay_in_1(23 downto 0) <= delay_in(23 downto 0);
-  filtered_signal_out <= debounce_0_filtered_signal_out;
-  raw_signal_in_1 <= raw_signal_in;
-  reset_in_1 <= reset_in;
+  \^delay_in_1\(23 downto 0) <= delay_in(23 downto 0);
+  \^raw_signal_in_1\ <= raw_signal_in;
+  \^reset_in_1\ <= reset_in;
+  counter_out(7 downto 0) <= btn_counter_0_counter_out(7 downto 0);
+  delay_in_1_1(23 downto 0) <= delay_in_1(23 downto 0);
+  raw_signal_in_1_1 <= raw_signal_in_1;
+  reset_in_1_1 <= reset_in_1;
+  reset_out <= btn_counter_0_reset_out;
+btn_counter_0: component BLDC_design_btn_counter_0_0
+     port map (
+      button1_in => debounce_0_filtered_signal_out,
+      button2_in => debounce_1_filtered_signal_out,
+      clk_200M_in => processing_system7_0_FCLK_CLK1,
+      counter_out(7 downto 0) => btn_counter_0_counter_out(7 downto 0),
+      reset_out => btn_counter_0_reset_out
+    );
 debounce_0: component BLDC_design_debounce_0_0
      port map (
       clk_200M_in => processing_system7_0_FCLK_CLK1,
-      delay_in(23 downto 0) => delay_in_1(23 downto 0),
+      delay_in(23 downto 0) => \^delay_in_1\(23 downto 0),
       filtered_signal_out => debounce_0_filtered_signal_out,
-      raw_signal_in => raw_signal_in_1,
-      reset_in => reset_in_1
+      raw_signal_in => \^raw_signal_in_1\,
+      reset_in => \^reset_in_1\
+    );
+debounce_1: component BLDC_design_debounce_0_1
+     port map (
+      clk_200M_in => processing_system7_0_FCLK_CLK1,
+      delay_in(23 downto 0) => delay_in_1_1(23 downto 0),
+      filtered_signal_out => debounce_1_filtered_signal_out,
+      raw_signal_in => raw_signal_in_1_1,
+      reset_in => reset_in_1_1
     );
 processing_system7_0: component BLDC_design_processing_system7_0_0
      port map (
