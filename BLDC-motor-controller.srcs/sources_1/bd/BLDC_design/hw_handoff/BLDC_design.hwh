@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Oct 23 13:15:00 2017" VIVADOVERSION="2017.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Oct 23 18:15:00 2017" VIVADOVERSION="2017.2">
 
   <SYSTEMINFO ARCH="zynq" BOARD="trenz.biz:te0726_m:part0:3.1" DEVICE="7z010" NAME="BLDC_design" PACKAGE="clg225" SPEEDGRADE="-1"/>
 
@@ -60,9 +60,14 @@
         <CONNECTION INSTANCE="btn_counter_0" PORT="reset_out"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" LEFT="7" NAME="counter_out" RIGHT="0" SIGIS="undef" SIGNAME="btn_counter_0_counter_out">
+    <PORT DIR="I" NAME="reset_in_2" SIGIS="rst" SIGNAME="External_Ports_reset_in_2">
       <CONNECTIONS>
-        <CONNECTION INSTANCE="btn_counter_0" PORT="counter_out"/>
+        <CONNECTION INSTANCE="PWM_generator_0" PORT="reset_in"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="PWM_out" SIGIS="undef" SIGNAME="PWM_generator_0_PWM_out">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="PWM_generator_0" PORT="PWM_out"/>
       </CONNECTIONS>
     </PORT>
   </EXTERNALPORTS>
@@ -115,6 +120,38 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
+    <MODULE FULLNAME="/PWM_generator_0" HWVERSION="1.0" INSTANCE="PWM_generator_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PWM_generator" VLNV="xilinx.com:module_ref:PWM_generator:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="CLK_FREQ" VALUE="200000000"/>
+        <PARAMETER NAME="PWM_FREQ" VALUE="21000"/>
+        <PARAMETER NAME="Component_Name" VALUE="BLDC_design_PWM_generator_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="clk_200mhz_in" SIGIS="undef" SIGNAME="processing_system7_0_FCLK_CLK1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="PWM_duty_in" RIGHT="0" SIGIS="undef" SIGNAME="btn_counter_0_counter_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="btn_counter_0" PORT="counter_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="reset_in" SIGIS="rst" SIGNAME="External_Ports_reset_in_2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset_in_2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="PWM_out" SIGIS="undef" SIGNAME="PWM_generator_0_PWM_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="PWM_out"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE FULLNAME="/btn_counter_0" HWVERSION="1.0" INSTANCE="btn_counter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="btn_counter" VLNV="xilinx.com:module_ref:btn_counter:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -145,7 +182,7 @@
         </PORT>
         <PORT DIR="O" LEFT="7" NAME="counter_out" RIGHT="0" SIGIS="undef" SIGNAME="btn_counter_0_counter_out">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="External_Ports" PORT="counter_out"/>
+            <CONNECTION INSTANCE="PWM_generator_0" PORT="PWM_duty_in"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1219,6 +1256,7 @@
             <CONNECTION INSTANCE="debounce_0" PORT="clk_200M_in"/>
             <CONNECTION INSTANCE="debounce_1" PORT="clk_200M_in"/>
             <CONNECTION INSTANCE="btn_counter_0" PORT="clk_200M_in"/>
+            <CONNECTION INSTANCE="PWM_generator_0" PORT="clk_200mhz_in"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst"/>

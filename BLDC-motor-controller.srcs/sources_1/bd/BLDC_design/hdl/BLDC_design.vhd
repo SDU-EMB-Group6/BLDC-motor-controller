@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
---Date        : Mon Oct 23 13:14:59 2017
+--Date        : Mon Oct 23 18:15:00 2017
 --Host        : DESKTOP-NHGQ0HT running 64-bit major release  (build 9200)
 --Command     : generate_target BLDC_design.bd
 --Design      : BLDC_design
@@ -34,17 +34,18 @@ entity BLDC_design is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    counter_out : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    PWM_out : out STD_LOGIC;
     delay_in : in STD_LOGIC_VECTOR ( 23 downto 0 );
     delay_in_1 : in STD_LOGIC_VECTOR ( 23 downto 0 );
     raw_signal_in : in STD_LOGIC;
     raw_signal_in_1 : in STD_LOGIC;
     reset_in : in STD_LOGIC;
     reset_in_1 : in STD_LOGIC;
+    reset_in_2 : in STD_LOGIC;
     reset_out : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of BLDC_design : entity is "BLDC_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=BLDC_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of BLDC_design : entity is "BLDC_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=BLDC_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=5,numReposBlks=5,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=4,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of BLDC_design : entity is "BLDC_design.hwdef";
 end BLDC_design;
@@ -151,6 +152,15 @@ architecture STRUCTURE of BLDC_design is
     counter_out : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component BLDC_design_btn_counter_0_0;
+  component BLDC_design_PWM_generator_0_0 is
+  port (
+    clk_200mhz_in : in STD_LOGIC;
+    PWM_duty_in : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    reset_in : in STD_LOGIC;
+    PWM_out : out STD_LOGIC
+  );
+  end component BLDC_design_PWM_generator_0_0;
+  signal PWM_generator_0_PWM_out : STD_LOGIC;
   signal btn_counter_0_counter_out : STD_LOGIC_VECTOR ( 7 downto 0 );
   signal btn_counter_0_reset_out : STD_LOGIC;
   signal debounce_0_filtered_signal_out : STD_LOGIC;
@@ -184,6 +194,7 @@ architecture STRUCTURE of BLDC_design is
   signal raw_signal_in_1_1 : STD_LOGIC;
   signal \^reset_in_1\ : STD_LOGIC;
   signal reset_in_1_1 : STD_LOGIC;
+  signal reset_in_2_1 : STD_LOGIC;
   signal NLW_processing_system7_0_FCLK_RESET0_N_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_ARVALID_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_M_AXI_GP0_AWVALID_UNCONNECTED : STD_LOGIC;
@@ -218,14 +229,22 @@ architecture STRUCTURE of BLDC_design is
   signal NLW_processing_system7_0_M_AXI_GP0_WSTRB_UNCONNECTED : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal NLW_processing_system7_0_USB0_PORT_INDCTL_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
 begin
+  PWM_out <= PWM_generator_0_PWM_out;
   \^delay_in_1\(23 downto 0) <= delay_in(23 downto 0);
   \^raw_signal_in_1\ <= raw_signal_in;
   \^reset_in_1\ <= reset_in;
-  counter_out(7 downto 0) <= btn_counter_0_counter_out(7 downto 0);
   delay_in_1_1(23 downto 0) <= delay_in_1(23 downto 0);
   raw_signal_in_1_1 <= raw_signal_in_1;
   reset_in_1_1 <= reset_in_1;
+  reset_in_2_1 <= reset_in_2;
   reset_out <= btn_counter_0_reset_out;
+PWM_generator_0: component BLDC_design_PWM_generator_0_0
+     port map (
+      PWM_duty_in(7 downto 0) => btn_counter_0_counter_out(7 downto 0),
+      PWM_out => PWM_generator_0_PWM_out,
+      clk_200mhz_in => processing_system7_0_FCLK_CLK1,
+      reset_in => reset_in_2_1
+    );
 btn_counter_0: component BLDC_design_btn_counter_0_0
      port map (
       button1_in => debounce_0_filtered_signal_out,

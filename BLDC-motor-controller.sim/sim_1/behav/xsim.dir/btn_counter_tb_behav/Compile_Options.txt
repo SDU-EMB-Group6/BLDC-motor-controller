@@ -1,1 +1,0 @@
--wto "41a797db4efe46ff9a85d0d7316d5c1d" --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" -L "xpm" --snapshot "btn_counter_tb_behav" "xil_defaultlib.btn_counter_tb" -log "elaborate.log" 
