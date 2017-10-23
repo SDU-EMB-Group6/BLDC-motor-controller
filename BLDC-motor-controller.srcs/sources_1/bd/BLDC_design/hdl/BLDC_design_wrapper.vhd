@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
---Date        : Mon Oct 23 18:15:00 2017
+--Date        : Mon Oct 23 18:42:01 2017
 --Host        : DESKTOP-NHGQ0HT running 64-bit major release  (build 9200)
 --Command     : generate_target BLDC_design_wrapper.bd
 --Design      : BLDC_design_wrapper

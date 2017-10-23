@@ -1,6 +1,6 @@
 Vivado Simulator 2017.2
 Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
-Running: C:/Vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 41a797db4efe46ff9a85d0d7316d5c1d --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot PWM_generator_tb_behav xil_defaultlib.PWM_generator_tb -log elaborate.log 
+Running: C:/Vivado/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 41a797db4efe46ff9a85d0d7316d5c1d --debug typical --relax --mt 2 -L xil_defaultlib -L secureip -L xpm --snapshot tb_counter_and_pwm_behav xil_defaultlib.tb_counter_and_pwm -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
@@ -11,6 +11,9 @@ Compiling package std.standard
 Compiling package std.textio
 Compiling package ieee.std_logic_1164
 Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture behavioral of entity xil_defaultlib.btn_counter [btn_counter_default]
 Compiling architecture behavioral of entity xil_defaultlib.PWM_generator [pwm_generator_default]
-Compiling architecture bench of entity xil_defaultlib.pwm_generator_tb
-Built simulation snapshot PWM_generator_tb_behav
+Compiling architecture bench of entity xil_defaultlib.tb_counter_and_pwm
+Built simulation snapshot tb_counter_and_pwm_behav
