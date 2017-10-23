@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
---Date        : Sun Oct 22 19:00:57 2017
+--Date        : Mon Oct 23 12:28:53 2017
 --Host        : DESKTOP-NHGQ0HT running 64-bit major release  (build 9200)
 --Command     : generate_target BLDC_design.bd
 --Design      : BLDC_design
@@ -43,10 +43,10 @@ entity BLDC_design is
     reset_in_1 : in STD_LOGIC;
     reset_out : out STD_LOGIC
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of BLDC_design : entity is "BLDC_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=BLDC_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of BLDC_design : entity is "BLDC_design.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of BLDC_design : entity is "BLDC_design,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=BLDC_design,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=4,numReposBlks=4,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of BLDC_design : entity is "BLDC_design.hwdef";
 end BLDC_design;
 
 architecture STRUCTURE of BLDC_design is

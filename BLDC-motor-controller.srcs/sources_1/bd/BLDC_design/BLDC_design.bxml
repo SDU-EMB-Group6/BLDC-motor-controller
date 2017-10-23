@@ -2,9 +2,9 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="BLDC_design" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1508691658"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1508691658"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1508691658"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1508754533"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1508754533"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1508754533"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\BLDC_design_processing_system7_0_0\BLDC_design_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
