@@ -98,7 +98,7 @@ begin
                     next_state <= idle;
                     count <= count - '1';
                     if (count < "00000000") then
-                        count <= "11111111";
+                        count <= "01111111";
                     end if;
                 end if;
 

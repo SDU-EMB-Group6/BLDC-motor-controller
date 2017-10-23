@@ -61,7 +61,7 @@ begin
   wait for 10 us;
    
    button1_in <= '1';
-   wait for 100 us;
+   wait for 1 ms;
    button1_in <= '0';
 
 
