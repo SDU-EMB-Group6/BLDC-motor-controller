@@ -83,7 +83,9 @@ PWM_duty_in <= counter_out;
    wait for 10 us;
    button1_in <= '0';
 
-    
+   
+wait for 100 us;
+
     -- Put test bench stimulus code here
 
     --stop_the_clock <= true;

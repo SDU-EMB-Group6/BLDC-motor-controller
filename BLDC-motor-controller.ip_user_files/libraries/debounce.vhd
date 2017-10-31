@@ -9,11 +9,14 @@ use IEEE.NUMERIC_STD.ALL;
 -- Entity
 -----------------------------------------------------------------------
 entity debounce is
+    generic(
+    delay_in               : STD_LOGIC_VECTOR(23 downto 0) := x"000004"
+    );
     Port 
     ( 
         clk_200M_in             : in STD_LOGIC;
         raw_signal_in           : in STD_LOGIC;
-        delay_in                : in STD_LOGIC_VECTOR(23 downto 0);
+        --delay_in1                : in STD_LOGIC_VECTOR(23 downto 0);
         reset_in                : in STD_LOGIC;
         filtered_signal_out     : out STD_LOGIC
     );
@@ -26,8 +29,8 @@ signal pr_state, nx_state: debounce_state;
 
 signal timer_reg                : unsigned(23 downto 0) := (others => '0');
 
-begin
 
+begin
 -----------------------------------------------------------------------
 -- Timer process
 -----------------------------------------------------------------------

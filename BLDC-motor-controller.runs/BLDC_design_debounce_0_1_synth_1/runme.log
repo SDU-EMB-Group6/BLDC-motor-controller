@@ -14,40 +14,41 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010-clg225'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010-clg225'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 11120 
+INFO: Helper process launched with PID 12728 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 317.965 ; gain = 78.945
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 317.629 ; gain = 78.262
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'BLDC_design_debounce_0_1' [c:/GIT/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_debounce_0_1/synth/BLDC_design_debounce_0_1.vhd:66]
-INFO: [Synth 8-3491] module 'debounce' declared at 'C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:11' bound to instance 'U0' of component 'debounce' [c:/GIT/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_debounce_0_1/synth/BLDC_design_debounce_0_1.vhd:87]
-INFO: [Synth 8-638] synthesizing module 'debounce' [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:22]
-WARNING: [Synth 8-614] signal 'delay_in' is read in the process but is not in the sensitivity list [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:62]
-INFO: [Synth 8-256] done synthesizing module 'debounce' (1#1) [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:22]
-INFO: [Synth 8-256] done synthesizing module 'BLDC_design_debounce_0_1' (2#1) [c:/GIT/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_debounce_0_1/synth/BLDC_design_debounce_0_1.vhd:66]
+INFO: [Synth 8-638] synthesizing module 'BLDC_design_debounce_0_1' [c:/GIT/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_debounce_0_1/synth/BLDC_design_debounce_0_1.vhd:65]
+	Parameter delay_in bound to: 24'b000000000000000000000100 
+INFO: [Synth 8-3491] module 'debounce' declared at 'C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:11' bound to instance 'U0' of component 'debounce' [c:/GIT/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_debounce_0_1/synth/BLDC_design_debounce_0_1.vhd:88]
+INFO: [Synth 8-638] synthesizing module 'debounce' [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:25]
+	Parameter delay_in bound to: 24'b000000000000000000000100 
+INFO: [Synth 8-256] done synthesizing module 'debounce' (1#1) [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:25]
+INFO: [Synth 8-256] done synthesizing module 'BLDC_design_debounce_0_1' (2#1) [c:/GIT/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_debounce_0_1/synth/BLDC_design_debounce_0_1.vhd:65]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 357.293 ; gain = 118.273
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 356.953 ; gain = 117.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 357.293 ; gain = 118.273
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 356.953 ; gain = 117.586
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg225-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 357.293 ; gain = 118.273
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 356.953 ; gain = 117.586
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z010clg225-1
 INFO: [Synth 8-802] inferred FSM for state register 'pr_state_reg' in module 'debounce'
-WARNING: [Synth 8-6014] Unused sequential element pr_state_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:39]
+WARNING: [Synth 8-6014] Unused sequential element pr_state_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:42]
 INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "nx_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element timer_reg_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:37]
-WARNING: [Synth 8-6014] Unused sequential element pr_state_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:39]
-WARNING: [Synth 8-6014] Unused sequential element pr_state_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:39]
+WARNING: [Synth 8-6014] Unused sequential element timer_reg_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:40]
+WARNING: [Synth 8-6014] Unused sequential element pr_state_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:42]
+WARNING: [Synth 8-6014] Unused sequential element pr_state_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:42]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -58,9 +59,9 @@ WARNING: [Synth 8-6014] Unused sequential element pr_state_reg was removed.  [C:
                high_wait |                              100 |                              100
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'pr_state_reg' using encoding 'sequential' in module 'debounce'
-WARNING: [Synth 8-6014] Unused sequential element pr_state_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:39]
+WARNING: [Synth 8-6014] Unused sequential element pr_state_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:42]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 357.293 ; gain = 118.273
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 356.953 ; gain = 117.586
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -73,8 +74,6 @@ No constraint files found.
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     24 Bit       Adders := 1     
 +---Muxes : 
 	   2 Input      3 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
@@ -93,8 +92,6 @@ Start RTL Hierarchical Component Statistics
 Hierarchical RTL Component report 
 Module debounce 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     24 Bit       Adders := 1     
 +---Muxes : 
 	   2 Input      3 Bit        Muxes := 1     
 	   3 Input      3 Bit        Muxes := 1     
@@ -120,9 +117,9 @@ No constraint files found.
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element U0/timer_reg_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:37]
+WARNING: [Synth 8-6014] Unused sequential element U0/timer_reg_reg was removed.  [C:/GIT/BLDC-motor-controller/BLDC-motor-controller.ip_user_files/libraries/debounce.vhd:40]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 497.758 ; gain = 258.738
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 483.387 ; gain = 244.020
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -135,7 +132,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 497.758 ; gain = 258.738
+Finished Timing Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 483.387 ; gain = 244.020
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -147,7 +144,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 498.758 ; gain = 259.738
+Finished Technology Mapping : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 484.391 ; gain = 245.023
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -171,7 +168,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 498.758 ; gain = 259.738
+Finished IO Insertion : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 484.391 ; gain = 245.023
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -184,7 +181,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 498.758 ; gain = 259.738
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 484.391 ; gain = 245.023
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -196,25 +193,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 498.758 ; gain = 259.738
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 484.391 ; gain = 245.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 498.758 ; gain = 259.738
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 484.391 ; gain = 245.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 498.758 ; gain = 259.738
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 484.391 ; gain = 245.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 498.758 ; gain = 259.738
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 484.391 ; gain = 245.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -230,11 +227,11 @@ Report Cell Usage:
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |CARRY4 |    17|
-|2     |LUT1   |    23|
-|3     |LUT4   |    25|
-|4     |LUT5   |     3|
-|5     |LUT6   |    34|
+|1     |CARRY4 |     6|
+|2     |LUT3   |     1|
+|3     |LUT4   |     3|
+|4     |LUT5   |     5|
+|5     |LUT6   |    32|
 |6     |FDCE   |    26|
 |7     |FDPE   |     1|
 +------+-------+------+
@@ -243,29 +240,29 @@ Report Instance Areas:
 +------+---------+---------+------+
 |      |Instance |Module   |Cells |
 +------+---------+---------+------+
-|1     |top      |         |   129|
-|2     |  U0     |debounce |   100|
+|1     |top      |         |    74|
+|2     |  U0     |debounce |    74|
 +------+---------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 498.758 ; gain = 259.738
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 484.391 ; gain = 245.023
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 7 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 498.758 ; gain = 259.738
-Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 498.758 ; gain = 259.738
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 484.391 ; gain = 245.023
+Synthesis Optimization Complete : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 484.391 ; gain = 245.023
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 17 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 6 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-20 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
+20 Infos, 6 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 574.285 ; gain = 336.902
+synth_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 570.941 ; gain = 332.223
 INFO: [Timing 38-35] Done setting XDC timing constraints.
 INFO: [Common 17-1381] The checkpoint 'C:/GIT/BLDC-motor-controller/BLDC-motor-controller.runs/BLDC_design_debounce_0_1_synth_1/BLDC_design_debounce_0_1.dcp' has been generated.
-write_checkpoint: Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1021.340 ; gain = 447.055
+write_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1012.637 ; gain = 441.695
 INFO: [Common 17-1381] The checkpoint 'C:/GIT/BLDC-motor-controller/BLDC-motor-controller.runs/BLDC_design_debounce_0_1_synth_1/BLDC_design_debounce_0_1.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 1022.547 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Oct 22 15:51:41 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.038 . Memory (MB): peak = 1013.824 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 31 13:18:47 2017...

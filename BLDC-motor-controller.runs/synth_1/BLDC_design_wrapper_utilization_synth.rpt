@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-| Date         : Mon Oct 23 18:43:50 2017
+| Date         : Tue Oct 31 14:57:03 2017
 | Host         : DESKTOP-NHGQ0HT running 64-bit major release  (build 9200)
 | Command      : report_utilization -file BLDC_design_wrapper_utilization_synth.rpt -pb BLDC_design_wrapper_utilization_synth.pb
 | Design       : BLDC_design_wrapper
@@ -106,24 +106,24 @@ Table of Contents
 5. IO and GT Specific
 ---------------------
 
-+-----------------------------+------+-------+-----------+--------+
-|          Site Type          | Used | Fixed | Available |  Util% |
-+-----------------------------+------+-------+-----------+--------+
-| Bonded IOB                  |   55 |     0 |        54 | 101.85 |
-| Bonded IPADs                |    0 |     0 |         2 |   0.00 |
-| Bonded IOPADs               |    0 |     0 |       130 |   0.00 |
-| PHY_CONTROL                 |    0 |     0 |         2 |   0.00 |
-| PHASER_REF                  |    0 |     0 |         2 |   0.00 |
-| OUT_FIFO                    |    0 |     0 |         8 |   0.00 |
-| IN_FIFO                     |    0 |     0 |         8 |   0.00 |
-| IDELAYCTRL                  |    0 |     0 |         2 |   0.00 |
-| IBUFDS                      |    0 |     0 |        54 |   0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |   0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |   0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |   0.00 |
-| ILOGIC                      |    0 |     0 |        54 |   0.00 |
-| OLOGIC                      |    0 |     0 |        54 |   0.00 |
-+-----------------------------+------+-------+-----------+--------+
++-----------------------------+------+-------+-----------+-------+
+|          Site Type          | Used | Fixed | Available | Util% |
++-----------------------------+------+-------+-----------+-------+
+| Bonded IOB                  |    5 |     0 |        54 |  9.26 |
+| Bonded IPADs                |    0 |     0 |         2 |  0.00 |
+| Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
+| PHASER_REF                  |    0 |     0 |         2 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |         8 |  0.00 |
+| IN_FIFO                     |    0 |     0 |         8 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |         2 |  0.00 |
+| IBUFDS                      |    0 |     0 |        54 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |  0.00 |
+| ILOGIC                      |    0 |     0 |        54 |  0.00 |
+| OLOGIC                      |    0 |     0 |        54 |  0.00 |
++-----------------------------+------+-------+-----------+-------+
 
 
 6. Clocking
@@ -165,8 +165,8 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| IBUF     |   53 |                  IO |
-| OBUF     |    2 |                  IO |
+| OBUF     |    3 |                  IO |
+| IBUF     |    2 |                  IO |
 +----------+------+---------------------+
 
 
@@ -177,6 +177,7 @@ Table of Contents
 |              Ref Name              | Used |
 +------------------------------------+------+
 | BLDC_design_processing_system7_0_0 |    1 |
+| BLDC_design_invert_top_0_0         |    1 |
 | BLDC_design_debounce_0_1           |    1 |
 | BLDC_design_debounce_0_0           |    1 |
 | BLDC_design_btn_counter_0_0        |    1 |

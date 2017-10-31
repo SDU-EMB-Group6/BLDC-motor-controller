@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.2 (win64) Build 1909853 Thu Jun 15 18:39:09 MDT 2017
-// Date        : Mon Oct 23 13:15:42 2017
+// Date        : Mon Oct 30 15:46:37 2017
 // Host        : DESKTOP-NHGQ0HT running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               C:/GIT/BLDC-motor-controller/BLDC-motor-controller.srcs/sources_1/bd/BLDC_design/ip/BLDC_design_btn_counter_0_0/BLDC_design_btn_counter_0_0_stub.v
