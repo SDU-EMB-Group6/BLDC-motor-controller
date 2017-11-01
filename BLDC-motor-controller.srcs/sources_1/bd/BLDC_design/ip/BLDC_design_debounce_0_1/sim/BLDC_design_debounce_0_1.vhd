@@ -57,7 +57,6 @@ ENTITY BLDC_design_debounce_0_1 IS
   PORT (
     clk_200M_in : IN STD_LOGIC;
     raw_signal_in : IN STD_LOGIC;
-    delay_in : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
     reset_in : IN STD_LOGIC;
     filtered_signal_out : OUT STD_LOGIC
   );
@@ -67,10 +66,12 @@ ARCHITECTURE BLDC_design_debounce_0_1_arch OF BLDC_design_debounce_0_1 IS
   ATTRIBUTE DowngradeIPIdentifiedWarnings : STRING;
   ATTRIBUTE DowngradeIPIdentifiedWarnings OF BLDC_design_debounce_0_1_arch: ARCHITECTURE IS "yes";
   COMPONENT debounce IS
+    GENERIC (
+      delay_in : STD_LOGIC_VECTOR(23 DOWNTO 0)
+    );
     PORT (
       clk_200M_in : IN STD_LOGIC;
       raw_signal_in : IN STD_LOGIC;
-      delay_in : IN STD_LOGIC_VECTOR(23 DOWNTO 0);
       reset_in : IN STD_LOGIC;
       filtered_signal_out : OUT STD_LOGIC
     );
@@ -79,10 +80,12 @@ ARCHITECTURE BLDC_design_debounce_0_1_arch OF BLDC_design_debounce_0_1 IS
   ATTRIBUTE X_INTERFACE_INFO OF reset_in: SIGNAL IS "xilinx.com:signal:reset:1.0 reset_in RST";
 BEGIN
   U0 : debounce
+    GENERIC MAP (
+      delay_in => X"000004"
+    )
     PORT MAP (
       clk_200M_in => clk_200M_in,
       raw_signal_in => raw_signal_in,
-      delay_in => delay_in,
       reset_in => reset_in,
       filtered_signal_out => filtered_signal_out
     );

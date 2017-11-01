@@ -86,7 +86,9 @@ begin
                     next_state <= idle;
                 elsif (timer_reg >= timeout) then
                     next_state <= idle;
-                    count <= count + 1;
+                    if(count < "11111000") then
+                         count <= count + 1;
+                    end if;
                 end if;
 
             when pressed_2 => 
@@ -97,8 +99,8 @@ begin
                 elsif (timer_reg >= timeout) then
                     next_state <= idle;
                     count <= count - '1';
-                    if (count < "00000000") then
-                        count <= "01111111";
+                    if (count < "00101000") then
+                        count <= "00000000";
                     end if;
                 end if;
 
