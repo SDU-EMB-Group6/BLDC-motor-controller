@@ -5,8 +5,8 @@ USE ieee.std_logic_unsigned.all;
 
 ENTITY SPI_master IS
 	GENERIC(
-		data_width	: INTEGER := 32;
-		frame_size	: INTEGER := 8
+		data_width	   : INTEGER := 32;
+		frame_size	   : INTEGER := 8
 		);
 	PORT(
 		reset		: IN	STD_LOGIC;
@@ -27,10 +27,11 @@ ARCHITECTURE Behavioral OF SPI_master IS
 	SIGNAL clk100Hz		: STD_LOGIC := '0';
 	SIGNAL cnt_rst		: STD_LOGIC;
 	SIGNAL tr_en		: STD_LOGIC;
-	SIGNAL send_data	: STD_LOGIC_VECTOR(frame_size-1 DOWNTO 0);
 	SIGNAL mosi_cnt		: INTEGER := 0;
 	SIGNAL mosi_out		: STD_LOGIC;
 	SIGNAL ss_n			: STD_LOGIC;
+	SIGNAL frame_ssbits : INTEGER := frame_size + 2;  -- frame size with start and stop bits
+	SIGNAL send_data	: STD_LOGIC_VECTOR(frame_size + 2 - 1 DOWNTO 0); 
 BEGIN
 
 	ss_n_out <= ss_n;
@@ -57,15 +58,17 @@ BEGIN
 	PROCESS(clk10MHz, reset)
 	BEGIN
 		IF rising_edge(clk100Hz) THEN
-			tr_en <= '1';
-			send_data <= tx_data(frame_size-1 DOWNTO 0);
-		END IF;
+            tr_en <= '1';
+            send_data(0) <= '0'; -- Start bit
+            send_data(frame_ssbits - 2 DOWNTO 1) <= tx_data(frame_size-1 DOWNTO 0);
+            send_data(frame_ssbits - 1) <= '1'; -- Stop bit
+        END IF;
 	END PROCESS;
 	
 	PROCESS(clk10MHz, tr_en)
 	BEGIN
 		IF rising_edge(clk10MHz) AND tr_en = '1' THEN
-			IF mosi_cnt = frame_size THEN
+			IF mosi_cnt = frame_size + 2 THEN    -- PLUS 2 for start and stop bits
 				mosi_cnt <= 0;
 				tr_en <= '0';
 				ss_n <= '1';
