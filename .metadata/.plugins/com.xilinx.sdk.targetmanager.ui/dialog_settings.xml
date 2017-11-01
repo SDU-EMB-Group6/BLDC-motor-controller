@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="Auto Detect" key="ZC702_hw_platform-device"/>
+	<item value="ZC702_hw_platform" key="programfpga.hwplatform"/>
+	<item value="Local" key="ZC702_hw_platform-target"/>
+	<item value="C:\GIT\BLDC-motor-controller\bitstream.bit" key="ZC702_hw_platform-bitFile"/>
+	<item value="" key="ZC702_hw_platform-bmmFile"/>
+	<item value="false" key="ZC702_hw_platform-partial_bit"/>
+</section>

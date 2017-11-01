@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="BLDC_design_wrapper.bit" key="BLDC_design_wrapper_hw_platform_0-bitFile"/>
+	<item value="" key="BLDC_design_wrapper_hw_platform_0-bmmFile"/>
+	<item value="Local" key="zynQCCC-target"/>
+	<item value="Auto Detect" key="zynQCCC-device"/>
+	<item value="Local" key="BLDC_design_wrapper_hw_platform_0-target"/>
+	<item value="Local" key="Zyngberrg_hardware_platform-target"/>
+	<item value="false" key="Zyngberrg_hardware_platform-partial_bit"/>
+	<item value="" key="zynQCCC-bmmFile"/>
+	<item value="Auto Detect" key="BLDC_design_wrapper_hw_platform_0-device"/>
+	<item value="BLDC_design_wrapper.bit" key="Zyngberrg_hardware_platform-bitFile"/>
+	<item value="Auto Detect" key="Zyngberrg_hardware_platform-device"/>
+	<item value="zynQCCC" key="programfpga.hwplatform"/>
+	<item value="BLDC_design_wrapper.bit" key="zynQCCC-bitFile"/>
+	<item value="false" key="BLDC_design_wrapper_hw_platform_0-partial_bit"/>
+	<item value="false" key="zynQCCC-partial_bit"/>
+	<item value="" key="Zyngberrg_hardware_platform-bmmFile"/>
+</section>

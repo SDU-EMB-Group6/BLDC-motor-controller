@@ -1,0 +1,103 @@
+14:09:39 INFO  : Registering command handlers for SDK TCF services
+14:09:40 INFO  : Launching XSCT server: xsct.bat -interactive C:\GIT\BLDC-motor-controller\BLDC-motor-controller.sdk\temp_xsdb_launch_script.tcl
+14:09:43 INFO  : XSCT server has started successfully.
+14:09:43 INFO  : Successfully done setting XSCT server connection channel  
+14:09:48 INFO  : Successfully done setting SDK workspace  
+14:21:41 INFO  : Project 'Zyngberrg_hardware_platform' created. You can now create BSPs and application projects targeting this hardware platform.
+14:23:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 2516330009BDA" && level==0} -index 1' command is executed.
+14:23:08 INFO  : 'fpga -state' command is executed.
+14:23:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:23:16 INFO  : Jtag cable 'JTAG-ONB4 2516330009BDA' is selected.
+14:23:16 INFO  : 'jtag frequency' command is executed.
+14:23:16 INFO  : Sourcing of 'C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/Zyngberrg_hardware_platform/ps7_init.tcl' is done.
+14:23:20 ERROR : no targets found with "name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 2516330009BDA"". available targets:
+  1  DAP (JTAG port open error. AP transaction error, DAP status 30000021)
+  2* xc7z010
+14:23:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/Zyngberrg_hardware_platform/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 2516330009BDA"} -index 0
+----------------End of Script----------------
+
+14:23:35 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:23:36 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 2516330009BDA" && level==0} -index 1' command is executed.
+14:23:37 INFO  : FPGA configured successfully with bitstream "C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/Zyngberrg_hardware_platform/BLDC_design_wrapper.bit"
+14:35:48 INFO  : Project 'ZynQ' created. You can now create BSPs and application projects targeting this hardware platform.
+14:38:19 INFO  : Project 'BLDC_design_wrapper_hw_platform_0' created. You can now create BSPs and application projects targeting this hardware platform.
+14:40:25 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 2516330009BDA" && level==0} -index 1' command is executed.
+14:40:25 INFO  : 'fpga -state' command is executed.
+14:40:25 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:40:25 INFO  : Jtag cable 'JTAG-ONB4 2516330009BDA' is selected.
+14:40:25 INFO  : 'jtag frequency' command is executed.
+14:40:25 INFO  : Sourcing of 'C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/BLDC_design_wrapper_hw_platform_0/ps7_init.tcl' is done.
+14:40:25 INFO  : Context for 'APU' is selected.
+14:40:25 INFO  : Hardware design information is loaded from 'C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/BLDC_design_wrapper_hw_platform_0/system.hdf'.
+14:40:25 INFO  : 'configparams force-mem-access 1' command is executed.
+14:40:25 INFO  : Context for 'APU' is selected.
+14:40:25 INFO  : 'stop' command is executed.
+14:40:26 INFO  : 'ps7_init' command is executed.
+14:40:26 INFO  : 'ps7_post_config' command is executed.
+14:40:26 INFO  : 'configparams force-mem-access 0' command is executed.
+14:40:26 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/BLDC_design_wrapper_hw_platform_0/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 2516330009BDA"} -index 0
+loadhw -hw C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/BLDC_design_wrapper_hw_platform_0/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 2516330009BDA"} -index 0
+stop
+ps7_init
+ps7_post_config
+configparams force-mem-access 0
+----------------End of Script----------------
+
+14:40:26 INFO  : Memory regions updated for context APU
+14:40:26 INFO  : Launch script is exported to file 'C:\GIT\BLDC-motor-controller\BLDC-motor-controller.sdk\.sdk\launch_scripts\xilinx_c-c++_application_(system_debugger)\system_debugger_using_debug_lab3.elf_on_local_(1).tcl'
+14:40:41 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+14:40:41 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 2516330009BDA" && level==0} -index 1' command is executed.
+14:40:42 INFO  : FPGA configured successfully with bitstream "C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/BLDC_design_wrapper_hw_platform_0/BLDC_design_wrapper.bit"
+14:47:51 INFO  : Project 'zynQCCC' created. You can now create BSPs and application projects targeting this hardware platform.
+15:00:05 INFO  : Disconnected from the channel tcfchan#1.
+15:29:57 INFO  : Launching XSCT server: xsct.bat -interactive C:\GIT\BLDC-motor-controller\BLDC-motor-controller.sdk\temp_xsdb_launch_script.tcl
+15:29:58 INFO  : XSCT server has started successfully.
+15:30:00 INFO  : Successfully done setting XSCT server connection channel  
+15:30:00 INFO  : Successfully done setting SDK workspace  
+15:30:04 INFO  : Registering command handlers for SDK TCF services
+15:30:25 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1509458715799,  Project:1509453690554
+15:30:25 INFO  : Project zynQCCC's source hardware specification located at C:\GIT\BLDC-motor-controller\BLDC-motor-controller.sdk\BLDC_design_wrapper.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+15:30:33 INFO  : Copied contents of C:\GIT\BLDC-motor-controller\BLDC-motor-controller.sdk\BLDC_design_wrapper.hdf into \zynQCCC\system.hdf.
+15:30:38 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+15:30:43 INFO  : 
+15:30:44 INFO  : Updating hardware inferred compiler options for lab3.
+15:30:44 INFO  : Clearing existing target manager status.
+15:30:45 INFO  : Closing and re-opening the MSS file of ther project lab3_bsp
+15:30:46 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+15:30:50 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+15:31:34 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 2516330009BDA" && level==0} -index 1' command is executed.
+15:31:34 INFO  : 'fpga -state' command is executed.
+15:31:34 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:31:35 INFO  : Jtag cable 'JTAG-ONB4 2516330009BDA' is selected.
+15:31:35 INFO  : 'jtag frequency' command is executed.
+15:31:35 INFO  : Sourcing of 'C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/zynQCCC/ps7_init.tcl' is done.
+15:31:35 INFO  : Context for 'APU' is selected.
+15:31:35 INFO  : Hardware design information is loaded from 'C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/zynQCCC/system.hdf'.
+15:31:35 INFO  : 'configparams force-mem-access 1' command is executed.
+15:31:35 INFO  : Context for 'APU' is selected.
+15:31:35 INFO  : 'stop' command is executed.
+15:31:35 ERROR : Memory read error at 0xF8007080. AHB AP transaction error, DAP status f0000021
+15:31:35 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+source C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/zynQCCC/ps7_init.tcl
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 2516330009BDA"} -index 0
+loadhw -hw C:/GIT/BLDC-motor-controller/BLDC-motor-controller.sdk/zynQCCC/system.hdf -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*" && jtag_cable_name =~ "JTAG-ONB4 2516330009BDA"} -index 0
+stop
+ps7_init
+----------------End of Script----------------
+
+15:31:49 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:31:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "JTAG-ONB4 2516330009BDA" && level==0} -index 1' command is executed.
+15:31:51 ERROR : fpga configuration failed. DONE PIN is not HIGH
+15:38:00 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
