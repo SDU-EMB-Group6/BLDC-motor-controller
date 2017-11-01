@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg225-1" LaunchTime="1508776932">
-  <File Type="PA-TCL" Name="BLDC_design_wrapper.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg225-1" LaunchTime="1509458357">
   <File Type="RDS-PROPCONSTRS" Name="BLDC_design_wrapper_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="BLDC_design_wrapper.tcl"/>
   <File Type="RDS-RDS" Name="BLDC_design_wrapper.vds"/>
   <File Type="RDS-UTIL" Name="BLDC_design_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="BLDC_design_wrapper_utilization_synth.pb"/>
@@ -28,6 +28,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/invert_signal.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/bd/BLDC_design/BLDC_design.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -49,7 +55,14 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
     <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/lab3.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
     <Config>
+      <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/new/lab3.xdc"/>
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
@@ -57,9 +70,10 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="BLDC_design_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="BLDC_design_invert_top_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="BLDC_design_PWM_generator_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="BLDC_design_processing_system7_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="BLDC_design_btn_counter_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="BLDC_design_debounce_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="BLDC_design_debounce_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="BLDC_design_btn_counter_0_0"/>
 </GenRun>

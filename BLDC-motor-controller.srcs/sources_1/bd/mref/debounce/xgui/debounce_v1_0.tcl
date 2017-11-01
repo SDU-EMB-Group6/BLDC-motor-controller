@@ -2,9 +2,24 @@
 proc init_gui { IPINST } {
   ipgui::add_param $IPINST -name "Component_Name"
   #Adding Page
-  ipgui::add_page $IPINST -name "Page 0"
+  set Page_0 [ipgui::add_page $IPINST -name "Page 0"]
+  ipgui::add_param $IPINST -name "delay_in" -parent ${Page_0}
 
 
 }
 
+proc update_PARAM_VALUE.delay_in { PARAM_VALUE.delay_in } {
+	# Procedure called to update delay_in when any of the dependent parameters in the arguments change
+}
+
+proc validate_PARAM_VALUE.delay_in { PARAM_VALUE.delay_in } {
+	# Procedure called to validate delay_in
+	return true
+}
+
+
+proc update_MODELPARAM_VALUE.delay_in { MODELPARAM_VALUE.delay_in PARAM_VALUE.delay_in } {
+	# Procedure called to set VHDL generic/Verilog parameter value(s) based on TCL parameter value
+	set_property value [get_property value ${PARAM_VALUE.delay_in}] ${MODELPARAM_VALUE.delay_in}
+}
 
