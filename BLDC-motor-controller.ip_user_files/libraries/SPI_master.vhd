@@ -9,10 +9,10 @@ ENTITY SPI_master IS
 		frame_size	   : INTEGER := 8
 		);
 	PORT(
-		reset		: IN	STD_LOGIC;
+		--reset		: IN	STD_LOGIC;
 		clk10MHz	: IN	STD_LOGIC;
-		tx_data 	: IN    STD_LOGIC_VECTOR(data_width-1 DOWNTO 0);
-		miso    	: IN    STD_LOGIC;
+		--tx_data 	: IN    STD_LOGIC_VECTOR(data_width-1 DOWNTO 0);
+		--miso    	: IN    STD_LOGIC;
 		mosi		: OUT	STD_LOGIC;
 		sclk		: OUT	STD_LOGIC;		
 		rx_data 	: OUT   STD_LOGIC_VECTOR(data_width-1 DOWNTO 0);
@@ -32,11 +32,16 @@ ARCHITECTURE Behavioral OF SPI_master IS
 	SIGNAL ss_n			: STD_LOGIC;
 	SIGNAL frame_ssbits : INTEGER := frame_size + 2;  -- frame size with start and stop bits
 	SIGNAL send_data	: STD_LOGIC_VECTOR(frame_size + 2 - 1 DOWNTO 0); 
+	SIGNAL reset        : STD_LOGIC;
+	SIGNAL tx_data      : STD_LOGIC_VECTOR(data_width-1 DOWNTO 0);
+	
 BEGIN
 
 	ss_n_out <= ss_n;
 	mosi <= mosi_out; -- Send to output
-
+    reset <= '0'; 
+    tx_data <= "00110011001100110011001100110011";
+    
 	PROCESS(clk10MHz, reset)
 	BEGIN
 		IF rising_edge(clk10MHz) THEN	
@@ -59,9 +64,9 @@ BEGIN
 	BEGIN
 		IF rising_edge(clk100Hz) THEN
             tr_en <= '1';
-            send_data(0) <= '0'; -- Start bit
-            send_data(frame_ssbits - 2 DOWNTO 1) <= tx_data(frame_size-1 DOWNTO 0);
-            send_data(frame_ssbits - 1) <= '1'; -- Stop bit
+            --send_data(0) <= '0'; -- Start bit
+            send_data(frame_ssbits - 1 DOWNTO 0) <= ('0' & tx_data(frame_size-1 DOWNTO 0) & '1');
+            --send_data(frame_ssbits - 1) <= '1'; -- Stop bit
         END IF;
 	END PROCESS;
 	
