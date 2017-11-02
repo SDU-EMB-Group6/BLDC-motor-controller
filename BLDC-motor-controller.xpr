@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="20" Path="C:/GIT/BLDC-motor-controller/BLDC-motor-controller.xpr">
+<Project Version="7" Minor="20" Path="/home/jalop17/01-scripts/02-HDL/BLDC-motor-controller/BLDC-motor-controller.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="41a797db4efe46ff9a85d0d7316d5c1d"/>
@@ -83,6 +83,12 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="BLDC_design.bd" FileRelPathName="ip/BLDC_design_invert_top_0_0/BLDC_design_invert_top_0_0.xci">
+          <Proxy FileSetName="BLDC_design_invert_top_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="BLDC_design.bd" FileRelPathName="ip/BLDC_design_PWM_generator_0_0/BLDC_design_PWM_generator_0_0.xci">
+          <Proxy FileSetName="BLDC_design_PWM_generator_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="BLDC_design.bd" FileRelPathName="ip/BLDC_design_processing_system7_0_0/BLDC_design_processing_system7_0_0.xci">
           <Proxy FileSetName="BLDC_design_processing_system7_0_0"/>
         </CompFileExtendedInfo>
@@ -95,15 +101,16 @@
         <CompFileExtendedInfo CompFileName="BLDC_design.bd" FileRelPathName="ip/BLDC_design_debounce_0_1/BLDC_design_debounce_0_1.xci">
           <Proxy FileSetName="BLDC_design_debounce_0_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="BLDC_design.bd" FileRelPathName="ip/BLDC_design_PWM_generator_0_0/BLDC_design_PWM_generator_0_0.xci">
-          <Proxy FileSetName="BLDC_design_PWM_generator_0_0"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="BLDC_design.bd" FileRelPathName="ip/BLDC_design_invert_top_0_0/BLDC_design_invert_top_0_0.xci">
-          <Proxy FileSetName="BLDC_design_invert_top_0_0"/>
-        </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/BLDC_design/hdl/BLDC_design_wrapper.vhd">
         <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PIPUSERFILESDIR/libraries/SPI_master.vhd">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -206,38 +213,38 @@
     <Simulator Name="Questa">
       <Option Name="Description" Val="Questa Advanced Simulator"/>
     </Simulator>
+    <Simulator Name="IES">
+      <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
+    </Simulator>
+    <Simulator Name="VCS">
+      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
+    </Simulator>
     <Simulator Name="Riviera">
       <Option Name="Description" Val="Riviera-PRO Simulator"/>
     </Simulator>
-    <Simulator Name="ActiveHDL">
-      <Option Name="Description" Val="Active-HDL Simulator"/>
-    </Simulator>
   </Simulators>
   <Runs Version="1" Minor="10">
-    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg225-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
+    <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7z010clg225-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="BLDC_design_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="BLDC_design_processing_system7_0_0" Part="xc7z010clg225-1" ConstrsSet="BLDC_design_processing_system7_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/BLDC_design_processing_system7_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="BLDC_design_processing_system7_0_0_synth_1" Type="Ft3:Synth" SrcSet="BLDC_design_processing_system7_0_0" Part="xc7z010clg225-1" ConstrsSet="BLDC_design_processing_system7_0_0" Description="Vivado Synthesis Defaults" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="BLDC_design_PWM_generator_0_0_synth_1" Type="Ft3:Synth" SrcSet="BLDC_design_PWM_generator_0_0" Part="xc7z010clg225-1" ConstrsSet="BLDC_design_PWM_generator_0_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/BLDC_design_PWM_generator_0_0_synth_1" IncludeInArchive="true">
+    <Run Id="BLDC_design_PWM_generator_0_0_synth_1" Type="Ft3:Synth" SrcSet="BLDC_design_PWM_generator_0_0" Part="xc7z010clg225-1" ConstrsSet="BLDC_design_PWM_generator_0_0" Description="Vivado Synthesis Defaults" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
         <Step Id="synth_design"/>
       </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <ReportStrategy/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
